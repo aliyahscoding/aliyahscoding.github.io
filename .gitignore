@@ -1,0 +1,13 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+
+# Node or build stuff (future-proof)
+node_modules/
+dist/
+build/
+.cache/
+.next/
