@@ -39,99 +39,32 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .nav-toggle { display: none; }
 
 /* Base button */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: var(--radius-1);
-  border: 1px solid var(--border);
-  font-weight: 600;
-  transition: background var(--fast) var(--ease),
-              color var(--fast) var(--ease),
-              border-color var(--fast) var(--ease),
-              box-shadow var(--fast) var(--ease),
-              transform var(--fast) var(--ease);
-  text-decoration: none;
-  cursor: pointer;
-}
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: var(--radius-1); border: 1px solid var(--border); font-weight: 600; transition: background var(--fast) var(--ease), color var(--fast) var(--ease), border-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease), transform var(--fast) var(--ease); text-decoration: none; cursor: pointer; }
 .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-1); }
 .btn-sm   { padding: 8px 12px; font-size: 14px; }
 
 /* -------- LIGHT THEME -------- */
-:root[data-theme="light"] .btn-primary {
-  background: var(--primary);
-  color: var(--on-primary);               /* white text on blue */
-  border-color: var(--primary);
-}
-:root[data-theme="light"] .btn-primary:hover {
-  background: var(--white);               /* blue -> white on hover */
-  color: var(--text);                     /* readable on white */
-  border-color: var(--primary);
-}
+:root[data-theme="light"] .btn-primary { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+:root[data-theme="light"] .btn-primary:hover { background: var(--white); color: var(--text); border-color: var(--primary); }
 
-:root[data-theme="light"] .btn-secondary {
-  background: var(--white);               /* white button */
-  color: var(--text);                     /* dark text */
-  border-color: var(--border);
-}
-:root[data-theme="light"] .btn-secondary:hover {
-  background: var(--primary);             /* white -> blue on hover */
-  color: var(--on-primary);               /* white text on blue */
-  border-color: var(--primary);
-}
+:root[data-theme="light"] .btn-secondary { background: var(--white); color: var(--text); border-color: var(--border); }
+:root[data-theme="light"] .btn-secondary:hover { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
-:root[data-theme="light"] .btn-ghost {
-  background: transparent;
-  color: var(--text);
-  border-color: transparent;
-}
-:root[data-theme="light"] .btn-ghost:hover {
-  background: var(--primary);
-  color: var(--on-primary);
-  border-color: var(--primary);
-}
+:root[data-theme="light"] .btn-ghost { background: transparent; color: var(--text); border-color: transparent; }
+:root[data-theme="light"] .btn-ghost:hover { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 /* -------- DARK THEME -------- */
-:root[data-theme="dark"] .btn-primary {
-  background: var(--primary);             /* stays blue by default */
-  color: var(--on-primary);               /* white text */
-  border-color: var(--primary);
-}
-:root[data-theme="dark"] .btn-primary:hover {
-  background: var(--white);               /* blue -> white on hover */
-  color: var(--on-white);                 /* dark text for contrast */
-  border-color: var(--white);
-}
+:root[data-theme="dark"] .btn-primary { background: var(--primary);  color: var(--on-primary);  border-color: var(--primary); }
+:root[data-theme="dark"] .btn-primary:hover { background: var(--white);  color: var(--on-white);  border-color: var(--white); }
 
-:root[data-theme="dark"] .btn-secondary {
-  background: var(--white);               /* white button in dark mode */
-  color: var(--on-white);                 /* dark text so it's visible */
-  border-color: var(--white);
-}
-:root[data-theme="dark"] .btn-secondary:hover {
-  background: var(--primary);             /* white -> blue on hover */
-  color: var(--on-primary);               /* white text on blue */
-  border-color: var(--primary);
-}
+:root[data-theme="dark"] .btn-secondary { background: var(--white);  color: var(--on-white);  border-color: var(--white); }
+:root[data-theme="dark"] .btn-secondary:hover { background: var(--primary);  color: var(--on-primary);  border-color: var(--primary); }
 
-:root[data-theme="dark"] .btn-ghost {
-  background: transparent;
-  color: var(--text);                      /* light text on dark bg */
-  border-color: transparent;
-}
-:root[data-theme="dark"] .btn-ghost:hover {
-  background: var(--primary);
-  color: var(--on-primary);
-  border-color: var(--primary);
-}
+:root[data-theme="dark"] .btn-ghost { background: transparent; color: var(--text);  border-color: transparent; }
+:root[data-theme="dark"] .btn-ghost:hover { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 
 /* Focus ring stays visible in both themes */
-a:focus-visible, button:focus-visible {
-  outline: 3px solid var(--accent-1);
-  outline-offset: 2px;
-}
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-1); outline-offset: 2px; }
 
 .btn-primary { background: var(--primary); color: #fff; border-color: transparent; }
 .btn-secondary { background: #EEF1F6; color: var(--text); }
@@ -140,15 +73,7 @@ a:focus-visible, button:focus-visible {
 .display { font-family: var(--font-display); font-size: clamp(36px, 8vw, 80px); margin: 0 0 8px; }
 .lead { font-size: clamp(16px, 2.5vw, 20px); color: var(--text-muted); }
 
-.hero {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 32px;
-  align-items: center;
-  /* Reduce empty space below the header */
-  padding-top: clamp(40px, 6vh, 80px);
-  padding-bottom: clamp(40px, 6vh, 80px);
-}
+.hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; padding-top: clamp(40px, 6vh, 80px); padding-bottom: clamp(40px, 6vh, 80px); }
 
 @media (max-width: 700px) {
   /* on phones, keep some breathing room */
@@ -161,27 +86,10 @@ a:focus-visible, button:focus-visible {
 .socials { display: flex; gap: 16px; padding: 0; list-style: none; margin: 16px 0 0; }
 
 /* container */
-.hero-art {
-  position: relative;
-  display: grid;
-  place-items: center;
-  isolation: isolate;     /* keeps backdrop behind */
-  overflow: visible;       /* don't clip the glow */
-}
+.hero-art { position: relative; display: grid; place-items: center; isolation: isolate; overflow: visible; }
 
 /* the actual circle + glow */
-.hero-backdrop {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(320px, 50vmin, 620px);
-  height: clamp(320px, 50vmin, 620px);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
+.hero-backdrop { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: clamp(320px, 50vmin, 620px); height: clamp(320px, 50vmin, 620px); border-radius: 50%; z-index: 0; pointer-events: none; transition: background 0.3s ease, box-shadow 0.3s ease; }
 
 /* LIGHT MODE — strong magenta-pink with a soft glow */
 :root[data-theme="light"] .hero-backdrop {
@@ -193,8 +101,7 @@ a:focus-visible, button:focus-visible {
       transparent 80%);
   box-shadow:
     0 0 180px 70px rgba(212, 94, 206, 0.35),
-    0 0 320px 140px rgba(212, 94, 206, 0.25);
-}
+    0 0 320px 140px rgba(212, 94, 206, 0.25); }
 
 /* DARK MODE — brighter orchid and wider radius */
 :root[data-theme="dark"] .hero-backdrop {
@@ -206,19 +113,9 @@ a:focus-visible, button:focus-visible {
       transparent 80%);
   box-shadow:
     0 0 160px 60px rgba(172, 32, 135, 0.35),
-    0 0 280px 120px rgba(172, 32, 135, 0.25);
-}
+    0 0 280px 120px rgba(172, 32, 135, 0.25); }
 
-.hero-art img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  border: 0;
-  outline: 0;
-  border-radius: var(--radius-2);
-  box-shadow: none;
-  max-width: min(92%, 600px);  /* keeps some halo visible around the image */
-}
+.hero-art img { position: relative; z-index: 1; display: block; border: 0; outline: 0; border-radius: var(--radius-2); box-shadow: none; max-width: min(92%, 600px); }
 
 @media (max-width: 600px) {
   .hero-backdrop {
@@ -232,8 +129,8 @@ a:focus-visible, button:focus-visible {
 .bullets { margin: 12px 0 0; padding-left: 18px; }
 .skills { display: flex; flex-wrap: wrap; gap: 10px; padding-right: 24px; }
 @media (max-width: 700px) {
-  .orb { --o: .55; }             /* all orbs a bit softer on phones */
-  .orb-layer .orb:nth-child(n+3) { display: none; }  /* keep at most 2 per section */
+  .orb { --o: .55; } 
+  .orb-layer .orb:nth-child(n+3) { display: none; } 
 }
 .chip { padding: 8px 12px; background: #EEF1F6; border-radius: 999px; font-size: 14px; }
 
@@ -286,25 +183,14 @@ a:focus-visible, button:focus-visible {
   transform: translateY(20px);
   pointer-events: none;
   transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
-  z-index: 50;
-}
+  z-index: 50; }
 
-.back-to-top.show {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+.back-to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
 /* Hover invert behavior */
-:root[data-theme="light"] .back-to-top:hover {
-  background: var(--white);
-  color: var(--primary);
-}
+:root[data-theme="light"] .back-to-top:hover { background: var(--white); color: var(--primary); }
 
-:root[data-theme="dark"] .back-to-top:hover {
-  background: var(--white);
-  color: var(--primary);
-}
+:root[data-theme="dark"] .back-to-top:hover { background: var(--white); color: var(--primary); }
 
 /* ===== Orbs (soft gradient circles) ===== */
 /* Sections create their own stacking context and clip their orbs */
@@ -353,13 +239,7 @@ a:focus-visible, button:focus-visible {
 /* ===== GLOBAL FULL-BLEED ORB BACKGROUND ===== */
 
 /* Fixed, full-bleed layer behind everything */
-.bg-orbs {
-  position: fixed;
-  /* extend beyond edges so nothing looks "cut off" */
-  inset: -15vh -15vw;
-  z-index: -2;
-  pointer-events: none;
-}
+.bg-orbs { position: fixed; inset: -15vh -15vw; z-index: -2; pointer-events: none; }
 
 /* Make sure page content sits above it */
 body, main, .section, .site-header { position: relative; z-index: 0; }

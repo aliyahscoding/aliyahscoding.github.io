@@ -1,7 +1,7 @@
-// Year in footer
+// Gets current year and is placed in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sticky header behavior + mobile nav
+// Makes header behavior sticky + mobile navigation
 const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('nav-menu');
@@ -26,15 +26,16 @@ menu?.querySelectorAll('a.nav-link').forEach(a => a.addEventListener('click', ()
 
 /* =========================
    Section-reactive background orbs
+  - honor reduced motion
+  - orb palettes per section
+  - utility to create one orb element
    ========================= */
 (() => {
   const root = document.getElementById('bg-orbs');
   if (!root) return;
 
-  // Honor reduced motion
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Orb palettes per section (feel free to tweak color combos)
   const SETS = {
     hero:     [ ['pink', -6,  12, 360, .75,  0.05], ['blue', 84, 10, 320, .55, -0.02], ['gold', 50, 22, 260, .45, 0.02] ],
     about:    [ ['teal', 60, 18, 280, .65, -0.02], ['pink',  8,  8, 300, .60,  0.04], ['mint', 85, 28, 240, .55, 0.03] ],
@@ -43,7 +44,6 @@ menu?.querySelectorAll('a.nav-link').forEach(a => a.addEventListener('click', ()
     contact:  [ ['mint',  12, 70, 300, .55, 0.03], ['violet', 88, 62, 260, .55, -0.02], ['blue',  44, 78, 220, .45, 0.02] ],
   };
 
-  // Utility to create one orb element
   function makeOrb([name, xvw, yvh, size, op, speed]) {
     const el = document.createElement('span');
     el.className = `orb orb--${name}`;
@@ -56,19 +56,17 @@ menu?.querySelectorAll('a.nav-link').forEach(a => a.addEventListener('click', ()
     return el;
   }
 
-  // Cross-fade: mark existing as "out", then remove after fade; add new "in"
+  // Cross-fade: mark existing as "out", then remove after fade; add new "in". After face, remove old nodes
   function setOrbs(key) {
     const config = SETS[key] || [];
-    // fade out existing
+
     const olds = [...root.children];
     olds.forEach(n => n.dataset.state = 'out');
 
-    // create new
     const frag = document.createDocumentFragment();
     config.forEach(spec => frag.appendChild(makeOrb(spec)));
     root.appendChild(frag);
 
-    // after fade, remove old nodes
     setTimeout(() => olds.forEach(n => n.remove()), 600);
   }
 

@@ -5,7 +5,7 @@ const btn = document.querySelector('.theme-toggle');
 const logo = document.querySelector('.brand-logo');
 const META_THEME = document.querySelector('meta[name="theme-color"]');
 
-// paths for your two logo versions
+// paths for two logo versions
 const LOGO_LIGHT = 'assets/images/logo-light.png';
 const LOGO_DARK  = 'assets/images/logo-dark.png';
 

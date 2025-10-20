@@ -38,7 +38,7 @@ async function loadProjects() {
     grid.innerHTML = items.map(cardTemplate).join('');
     wireCards();
   } catch (e) {
-    // leave fallback card
+    // fallback card
   }
 }
 
@@ -53,8 +53,8 @@ function wireCards() {
       const inner = card.querySelector('.card-inner');
       inner.addEventListener('click', () => {
         card.classList.toggle('flipped');
-        // In mobile, we rely on the same class but no 3D transforms if no hover
-        inner.style.transform = inner.style.transform ? '' : 'translateY(0)';
+        /* DISABLED: In mobile, rely on the same class but no 3D transforms if no hover
+        inner.style.transform = inner.style.transform ? '' : 'translateY(0)'; */
       });
     }
   });
