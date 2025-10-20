@@ -1,0 +1,54 @@
+/* Small shared components and states */
+.nojs .card-back { display: none; } /* Fallback if JS is off */
+
+/* Theme-aware scrolled state */
+/* same color as theme background */
+.nav.scrolled { background: var(--bg); border-bottom: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+
+.reveal { opacity: 0; transform: translateY(16px); }
+.reveal.visible { opacity: 1; transform: none; transition: opacity var(--slow) var(--ease), transform var(--slow) var(--ease); }
+
+/* ---------- CHIP & TAG THEMING ---------- */
+:root[data-theme="light"] .chip,
+:root[data-theme="light"] .tag { background: #EEF1F6; color: var(--text); border: 1px solid var(--border); }
+
+:root[data-theme="dark"] .chip,
+:root[data-theme="dark"] .tag { background: rgba(255, 255, 255, 0.10); color: var(--text); border: 1px solid rgba(255, 255, 255, 0.18); }
+
+.chip, .tag { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; font-size: 12px; line-height: 1; transition: background var(--fast) var(--ease), border-color var(--fast) var(--ease); }
+.chip:hover, .tag:hover { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, transparent); }
+
+/* ---------- CARDS (base + hover) ---------- */
+.card {
+  background: var(--surface-2, #fff);
+  color: var(--text);
+  border-radius: var(--radius-3, 16px);
+  box-shadow: var(--shadow-1);
+  transition:
+    transform var(--fast, 180ms) var(--ease, cubic-bezier(.2,.7,.2,1)),
+    box-shadow var(--fast, 180ms) var(--ease, cubic-bezier(.2,.7,.2,1)),
+    background var(--fast, 180ms) var(--ease, cubic-bezier(.2,.7,.2,1));
+  will-change: transform, box-shadow;
+}
+
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-3); }
+
+.card, .card * {
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 64px;
+}
+
+/* project-specific card container */
+.project-card { position: relative; overflow: hidden; }
+
+/* media area: gives a tiny lift and extra shadow on hover */
+.project-card .card-media {
+  transition: transform 180ms var(--ease, cubic-bezier(.2,.7,.2,1)),
+              box-shadow 180ms var(--ease, cubic-bezier(.2,.7,.2,1)); }
+.project-card:hover .card-media { transform: translateY(-2px); box-shadow: 0 12px 50px rgba(8,61,119,.18); }
+:root[data-theme="dark"] .project-card:hover .card-media { box-shadow: 0 12px 50px rgba(92,124,255,.25); }
+
+/* focus-visible so keyboard users aren’t punished */
+.card:focus-within, .card:focus-visible { outline: 3px solid color-mix(in srgb, var(--primary) 50%, transparent); outline-offset: 2px; }
+
+/* motion-sensitive users */
+@media (prefers-reduced-motion: reduce) { .card, .project-card .card-media { transition: none !important; transform: none !important; } }

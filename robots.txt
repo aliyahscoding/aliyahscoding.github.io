@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: Sitemap: https://aliyahcodes.com/sitemap.xml

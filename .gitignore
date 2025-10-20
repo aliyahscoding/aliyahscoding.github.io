@@ -1,0 +1,32 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Node and dependency caches
+node_modules/
+npm-debug.log*
+
+# Editor settings
+.vscode/
+*.code-workspace
+
+# Environment files
+.env
+.env.local
+
+# Temporary build or backup files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# MacOS & Window specific
+ehthumbs.db
+Icon?
+desktop.ini
+
+# Node or build stuff (future-proof)
+dist/
+build/
+.cache/
+.next/

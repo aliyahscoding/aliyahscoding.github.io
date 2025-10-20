@@ -1,0 +1,59 @@
+:root {
+  /* Typography */
+  --font-display: "Bebas Neue", system-ui, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Sizing */
+  --maxw: 1120px;
+  --radius-1: 12px;
+  --radius-2: 20px;
+
+  /* Motion */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --fast: 160ms;
+  --norm: 240ms;
+  --slow: 360ms;
+
+  --white: #ffffff;
+  --on-white: #101010; /* readable text on white buttons in dark mode */
+  --on-primary: #ffffff; /* text on blue buttons */
+}
+
+/* Light theme (default) */
+:root[data-theme="light"] {
+  --bg: #e5e4e6;
+  --surface: #f5bbcc;
+  --text: #101010;
+  --text-muted: #363636;
+  --primary: #083D77;
+  --secondary: #358280;
+  --accent-1: #D45ECE;
+  --accent-2: #AC2087;
+  --border: #E3DDDB;
+
+  --shadow-0: 0 0 0 rgba(0,0,0,0);
+  --shadow-1: 0 3px 10px rgba(0,0,0,.10);
+  --shadow-2: 0 6px 20px rgba(0,0,0,.12);
+  --shadow-3: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  --bg: #0F1422; 
+  --surface: #121a2b;
+  --text: #EAF0FF;
+  --text-muted: #C6CCE0;
+  --primary: #5C7CFF; 
+  --secondary: #5DA9A4; 
+  --accent-1: #E384E3;
+  --accent-2: #FF6AC1; 
+  --border: #1f2840;
+
+  --shadow-0: 0 0 0 rgba(0,0,0,0);
+  --shadow-1: 0 3px 10px rgba(0,0,0,.30);
+  --shadow-2: 0 6px 22px rgba(0,0,0,.38);
+  --shadow-3: 0 12px 36px rgba(0,0,0,.55);
+}
+
+/* Apply theme variables */
+html, body { background: var(--bg); color: var(--text); font-family: var(--font-body); }

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "tiny-recommender",
+    "title": "Tiny Item-Item Recommender",
+    "description": "A minimal item-item collaborative filtering demo built in Python. It uses cosine similarity to recommend items based on user preferences — a clean, lightweight approach to understanding recommendation systems.",
+    "tags": ["Python","pandas","numpy","ML"],
+    "image": "assets/images/projects/recommender.gif",
+    "alt": "Animated preview of item–item recommendations",
+    "repo": "https://github.com/aliyahscoding/tiny-recommender",
+    "demo": ""
+  },
+  {
+    "id": "sorting-visualizer",
+    "title": "Sorting Visualizer",
+    "description": "A visual exploration of classic sorting algorithms like Merge, Bubble, and Quick Sort. Built with JavaScript, it animates each step to make the logic behind sorting intuitive and interactive.",
+    "tags": ["JavaScript","Algorithms","Viz"],
+    "image": "assets/images/projects/sorting.gif",
+    "alt": "Bars animating during a sorting algorithm",
+    "repo": "https://github.com/aliyahscoding/sorting-visualizer",
+    "demo": ""
+  },
+  {
+    "id": "weather-insights",
+    "title": "Weather Insights",
+    "description": "A data-driven Python app that fetches and visualizes weather data from APIs, providing summaries, insights, and trends in a clean, accessible format.",
+    "tags": ["Python","API","Pandas","Viz"],
+    "image": "assets/images/projects/weather-insights.gif",
+    "alt": "Weather charts animation",
+    "repo": "https://github.com/aliyahscoding/weather-insights",
+    "demo": ""
+  },
+  {
+    "id": "cpp-csv-stats",
+    "title": "C++ CSV Stats",
+    "description": "A C++ utility that parses CSV files and computes key statistics like mean, median, and variance. Fast, efficient, and designed for data-heavy workflows.",
+    "tags": ["C++","CLI","Parsing"],
+    "image": "assets/images/projects/csv-stats.gif",
+    "alt": "Terminal output animating CSV stats",
+    "repo": "https://github.com/aliyahscoding/cpp-csv-stats",
+    "demo": ""
+  },
+  {
+    "id": "img-to-ascii",
+    "title": "Image → ASCII",
+    "description": "A Python project that converts images into ASCII art using Pillow and NumPy. It’s a creative blend of image processing and coding aesthetics.",
+    "tags": ["Python","Pillow","NumPy"],
+    "image": "assets/images/projects/ascii.gif",
+    "alt": "Image transforming into ASCII characters",
+    "repo": "https://github.com/aliyahscoding/img-to-ascii",
+    "demo": ""
+  }
+]

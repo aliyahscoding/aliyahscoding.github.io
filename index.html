@@ -1,26 +1,221 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> Work In Progress... </title>
-    <style>
-      :root { --fg:#f5f5f5; --bg:#0c0c0c; --muted:#bdbdbd; --accent:#ff7a1a; }
-      html,body { height:100%; }
-      body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, Segoe UI, Roboto, Arial; }
-      .wrap { max-width:900px; margin:0 auto; padding:72px 20px; }
-      .pill { display:inline-block; padding:6px 10px; border:1px solid #272727; border-radius:999px; font-size:13px; color:var(--muted); }
-      h1 { font-size:42px; margin:16px 0 8px; }
-      p { color:var(--muted); max-width:70ch; }
-      a { color:var(--accent); text-decoration:none; border-bottom:1px solid #ff7a1a33; }
-      .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:28px; }
-      .card { border:1px solid #232323; border-radius:16px; padding:16px; background:#0f0f0f; }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <span class="pill">Portfolio</span>
-      <p style="text-align:center;"><h1>aliyahcodes.com</h1></p>
+
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Aliyah Melendez</title>
+  <meta name="description" content="Data + design portfolio of Aliyah Melendez. Projects, resume, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Display + body fonts (swap later if you self-host) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <meta name="theme-color" content="#F6EFEE">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/icons/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-192.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Aliyah Melendez — Data + Design Portfolio">
+  <meta property="og:description" content="I mix data, design, and math to build useful, beautiful things.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aliyahcodes.com/">
+  <meta property="og:image" content="https://aliyahcodes.com/assets/images/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Analytics (Plausible) -->
+  <script defer data-domain="aliyahcodes.com" src="https://plausible.io/js/script.js"></script>
+</head>
+
+<body>
+  <!-- GLOBAL, FULL-BLEED ORB BACKGROUND (populated by JS) -->
+  <div id="bg-orbs" class="bg-orbs" aria-hidden="true"></div>
+    <!-- Positions use vw/vh so they aren’t tied to a boxed container -->
+    <span class="orb orb--pink"   style="--x: -5vw;  --y: 12vh; --size: 360px; --o:.75" data-speed="0.05"></span> <!-- Near hero left (pink) -->
+    <span class="orb orb--teal"   style="--x: 58vw;  --y: 22vh; --size: 280px; --o:.65" data-speed="-0.02"></span> <!-- Drift above About center (teal, slightly smaller) -->
+    <span class="orb orb--violet" style="--x: 88vw;  --y: 36vh; --size: 320px; --o:.60" data-speed="0.03"></span> <!-- Projects top-right (violet) -->
+    <span class="orb orb--blue"   style="--x: 10vw;  --y: 62vh; --size: 380px; --o:.55" data-speed="-0.02"></span> <!-- Soft blue further down the page (under projects grid) -->
+    <span class="orb orb--gold"   style="--x: 76vw;  --y: 78vh; --size: 320px; --o:.50" data-speed="0.02"></span> <!-- Warm gold near resume (very soft) -->
+    <span class="orb orb--mint"   style="--x: -8vw;  --y: 92vh; --size: 300px; --o:.55" data-speed="0.03"></span> <!-- Mint near contact (bottom-left) -->
+  </div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top">
+      <img src="assets/images/logo-light.png" alt="Aliyah Melendez logo" class="brand-logo" />
+      <span class="brand-text">Aliyah Melendez</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Open menu</span>
+        ☰
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#resume" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a class="btn btn-primary" href="resume/Aliyah-Melendez-Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <!-- Theme toggle wired later -->
+        <button class="btn btn-ghost theme-toggle" type="button" aria-pressed="false" title="Toggle theme">🌓</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="section hero container reveal">
+      <div class="hero-text">
+        <h1 class="display">Hello, I'm</h1>
+        <h1 class="display">Aliyah Melendez</h1>
+        <p class="lead">I’m a Computer Science graduate with a love for data, math, and creative problem-solving. I turn patterns and numbers into meaningful stories with the help of code.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">See my work</a>
+          <a class="btn btn-secondary" href="#about">About me</a>
+        </div>
+
+        <ul class="socials" aria-label="Social links">
+          <li><a href="https://github.com/aliyahscoding" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="mailto:aliyahmelendez@proton.me">Email</a></li>
+          <li><a href="https://instagram.com/aliyah_melvill" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://facebook.com/aliyah.melendez.98" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+
+      </div>
+      <div class="hero-art">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <img src="assets/images/hero-portrait.svg"
+            alt="Aliyah — creative developer and data enthusiast"
+            loading="eager" decoding="async">
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section container reveal" id="about" data-bg="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I graduated from Texas State University with a B.S. in Computer Science
+          and a minor in Applied Mathematics, though I first planned to study art at
+          university before discovering my love for math, science, and technology. I still create
+          art as a hobby, and that creativity continues to shape how I approach coding
+          and data. I’m especially drawn to data science, graphs, networks, and mathematical
+          concepts, and even conducted research on Khovanov homology during my time at TXST.
+          Outside of coding, I love being outdoors, whether I’m hiking, exploring new
+          places, or simply enjoying nature and I’m an avid reader always looking for
+          new perspectives. I’m passionate about blending logic, creativity, and curiosity
+          into everything I build, and I’m constantly looking for opportunities to grow as
+          both a programmer and a person.</p>
+          <ul class="bullets">
+            <li>Favorite topics: network science, graph algorithms, visualization</li>
+            <li>Stacks: Python, C++, HTML/CSS/JS</li>
+            <li>Bonus: UI work, with help from my skills in art</li>
+          </ul>
+        </div>
+        <div class="skills">
+          <span class="chip">Python</span>
+          <span class="chip">C++</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">scikit-learn</span>
+          <span class="chip">Data Viz</span>
+          <span class="chip">Accessibility</span>
+          <span class="chip">Git/GitHub</span>
+          <span class="chip">Figma</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section container reveal" id="projects" data-bg="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-grid" id="project-grid" aria-live="polite">
+        <!-- Cards are injected from data/projects.json by scripts/cards.js -->
+        <!-- Fallback: one static example card so empty state isn’t sad -->
+        <article class="project-card nojs">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="assets/images/og-cover.svg" alt="Project thumbnail" loading="lazy">
+              <div class="card-meta">
+                <h3>Sample Project</h3>
+                <div class="tags"><span class="tag">Python</span><span class="tag">Data</span></div>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <p>Tiny item-item recommender. Cosine similarity. Clean, readable code.</p>
+              <div class="card-actions">
+                <a class="btn btn-primary btn-sm" href="#" target="_blank" rel="noopener">Repo</a>
+                <a class="btn btn-secondary btn-sm" href="#" target="_blank" rel="noopener">Demo</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section class="section container reveal" id="resume" data-bg="resume">
+      <h2 class="section-title">Resume</h2>
+
+      <div class="resume-actions">
+        <a class="btn btn-primary" href="resume/Aliyah-Melendez-Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        <a class="btn btn-secondary" href="resume/Aliyah-Melendez-Resume.pdf" download>Download PDF</a>
+      </div>
+
+      <div class="resume-frame" role="region" aria-label="Embedded resume preview">
+        <!-- Prefer iframe; most modern browsers support this -->
+        <iframe
+          src="resume/Aliyah-Melendez-Resume.pdf#view=FitH&toolbar=1&statusbar=0&navpanes=0"
+          title="Aliyah Melendez Resume"
+          loading="lazy"></iframe>
+
+        <!-- Fallback message for browsers that block inline PDFs -->
+        <div class="resume-fallback">
+          <p>Your browser can’t display the PDF here. You can
+            <a href="resume/Aliyah-Melendez-Resume.pdf" target="_blank" rel="noopener">open it in a new tab</a>
+            or download it instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container reveal" id="contact" data-bg="contact">
+      <h2 class="section-title">Connect With Me</h2>
+
+      <p class="lead">If you’d like to connect, collaborate, or chat about a project, I’m always open to new ideas and conversations. Feel free to reach out, I’d love to hear from you.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:aliyah@example.com">Email me</a>
+        <a class="btn btn-secondary" href="https://github.com/aliyahscoding" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Made with &#x2665 © <span id="year"></span> Aliyah Melendez</p>
+      <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
     </div>
-  </body>
+  </footer>
+
+  <script src="scripts/theme.js" defer></script>
+  <script src="scripts/reveal.js" defer></script>
+  <script src="scripts/cards.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</body>
 </html>
