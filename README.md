@@ -36,7 +36,6 @@ The website supports both **light** and **dark** themes and is fully responsive 
 ├── site.webmanifest        # PWA site metadata (optional)
 ├── sitemap.xml             # Sitemap for SEO
 └── README.md               # This file
-```
 
 ## Tech Stack
 
@@ -60,7 +59,6 @@ To run locally:
 git clone https://github.com/aliyahscoding/aliyahscoding.github.io.git
 cd aliyahscoding.github.io
 # Open index.html in your browser or use VS Code Live Server
-```
 
 ## Deployment
 
